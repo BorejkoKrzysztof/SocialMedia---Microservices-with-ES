@@ -10,6 +10,6 @@ namespace Post.Common.Events
 
         }
 
-        public Guid Comment { get; set; }
+        public Guid CommentId { get; set; }
     }
 }
