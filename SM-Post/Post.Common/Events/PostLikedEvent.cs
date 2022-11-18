@@ -1,0 +1,16 @@
+using System.Runtime.Intrinsics.Arm.Arm64;
+using System;
+using CQRS.Core.Events;
+
+namespace Post.Common.Events
+{
+    public class PostLikedEvent : BaseEvent
+    {
+        public PostLikedEvent() : base(nameof(PostLikedEvent))
+        {
+
+        }
+
+
+    }
+}
