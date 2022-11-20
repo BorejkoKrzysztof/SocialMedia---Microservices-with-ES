@@ -1,7 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.services.Configure<MongoDbConfig>(builder.Configuration.GetSection(nameof(MongodbConfig)));
+builder.services.AddScoped<IEventStoreRepository, EventStoreRepository>();
+builder.services.AddScoped<IEventSourcingHandler, EventSourcingHandler>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
